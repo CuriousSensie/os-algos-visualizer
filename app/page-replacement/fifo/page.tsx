@@ -62,7 +62,7 @@ export default function FIFOPage() {
           {/* Memory Frames */}
           <PageFrameDisplay
             frames={currentStep.frames}
-            highlightIndex={currentStep.replacedFrameIndex}
+            highlightIndex={currentStep.action === 'hit' ? currentStep.hitFrameIndex : currentStep.replacedFrameIndex}
             action={currentStep.action}
           />
 

@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Header />
-          <main className="flex-1">
+          <main className="flex-1 px-12">
             {children}
           </main>
           <Footer />

@@ -26,17 +26,6 @@ export function ExplanationPanel({
 }: ExplanationPanelProps) {
   return (
     <div className={className}>
-      <Card variant="bordered" className="mb-4">
-        <CardHeader>
-          <CardTitle>{algorithmName}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400">
-            {description}
-          </p>
-        </CardContent>
-      </Card>
-
       {currentStepExplanation && (
         <Card variant="bordered" className="mb-4">
           <CardHeader>
@@ -52,6 +41,18 @@ export function ExplanationPanel({
           </CardContent>
         </Card>
       )}
+      
+      <Card variant="bordered" className="mb-4">
+        <CardHeader>
+          <CardTitle>{algorithmName}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            {description}
+          </p>
+        </CardContent>
+      </Card>
+
 
       {pseudocode && pseudocode.length > 0 && (
         <Card variant="bordered">

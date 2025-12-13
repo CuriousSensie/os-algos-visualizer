@@ -15,6 +15,7 @@ export interface PageReplacementStep extends AlgorithmStep {
   action: PageAction;
   replacedPage?: number | null;
   replacedFrameIndex?: number;
+  hitFrameIndex?: number;
   explanation: string;
 }
 

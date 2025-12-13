@@ -52,7 +52,7 @@ export default function OptimalPage() {
           <PageRequestQueue pageRequests={pageRequests} currentIndex={animation.currentStep} />
           <PageFrameDisplay
             frames={currentStep.frames}
-            highlightIndex={currentStep.replacedFrameIndex}
+            highlightIndex={currentStep.action === 'hit' ? currentStep.hitFrameIndex : currentStep.replacedFrameIndex}
             action={currentStep.action}
           />
           <ControlPanel {...animation} />

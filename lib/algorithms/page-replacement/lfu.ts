@@ -35,6 +35,7 @@ export function runLFU(
         currentPage: page,
         frames: [...frames],
         action: 'hit',
+        hitFrameIndex: frameIndex,
         explanation: `Page ${page} found in frame ${frameIndex}, frequency: ${frequency.get(page)} (Page Hit)`
       });
     } else {

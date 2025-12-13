@@ -34,6 +34,7 @@ export function runLRU(
         currentPage: page,
         frames: [...frames],
         action: 'hit',
+        hitFrameIndex: frameIndex,
         explanation: `Page ${page} found in frame ${frameIndex} (Page Hit)`
       });
     } else {
