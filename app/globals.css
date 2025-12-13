@@ -1,8 +1,24 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Algorithm state colors (Light mode) */
+  --color-success: #22c55e;      /* Green - Hit/Safe/Success */
+  --color-error: #ef4444;        /* Red - Fault/Deadlock/Error */
+  --color-warning: #eab308;      /* Yellow - Waiting/Decision */
+  --color-active: #3b82f6;       /* Blue - Active/Executing */
+  --color-neutral: #6b7280;      /* Gray - Idle/Empty */
+
+  /* Process colors for CPU scheduling */
+  --color-process-1: #8b5cf6;    /* Purple */
+  --color-process-2: #ec4899;    /* Pink */
+  --color-process-3: #10b981;    /* Emerald */
+  --color-process-4: #f59e0b;    /* Amber */
+  --color-process-5: #06b6d4;    /* Cyan */
 }
 
 @theme inline {
@@ -16,11 +32,51 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    /* Algorithm state colors (Dark mode - slightly muted) */
+    --color-success: #16a34a;
+    --color-error: #dc2626;
+    --color-warning: #ca8a04;
+    --color-active: #2563eb;
+    --color-neutral: #9ca3af;
   }
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+
+  /* Algorithm state colors (Dark mode - slightly muted) */
+  --color-success: #16a34a;
+  --color-error: #dc2626;
+  --color-warning: #ca8a04;
+  --color-active: #2563eb;
+  --color-neutral: #9ca3af;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Disable transitions for elements that need instant updates */
+button, input, select, textarea {
+  transition-property: background-color, border-color, color, opacity, transform;
 }
