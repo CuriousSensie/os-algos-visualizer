@@ -22,6 +22,7 @@ export default function DeadlockHub() {
             <CardTitle>Coming Soon</CardTitle>
             <Badge variant="warning">In Development</Badge>
           </div>
+          <p>Currently, we are opting Windows approach of Deadlock handling i.e. Ignoring the problem and assuming that <strong>DEADLOCKS NEVER OCCUR</strong></p>
           <CardDescription className="mt-2">
             Deadlock Handling visualizations are currently under development. This section will include:
           </CardDescription>
